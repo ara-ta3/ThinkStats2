@@ -1,4 +1,9 @@
-ThinkStats2
-===========
+thinkstats を読む
+============
 
-Text and supporting code for Think Stats, 2nd Edition
+# code 
+
+https://github.com/AllenDowney/ThinkStats2
+
+
+
