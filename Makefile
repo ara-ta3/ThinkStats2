@@ -18,8 +18,13 @@ install:
 __command:
 	env PATH=$(envdir)/bin:$(PATH) $(command)
 
-install-vim-plugin:
+install-vim-plugin: __install-vim-plugin .jupyter/custom/custom.js
+
+__install-vim-plugin:
 	test -f $(jupyter)
 	mkdir -p `$(jupyter) --data-dir`/nbextensions
 	test -d `$(jupyter) --data-dir`/nbextensions/vim_binding || git clone https://github.com/lambdalisue/jupyter-vim-binding.git `$(jupyter) --data-dir`/nbextensions/vim_binding
 	$(MAKE) __command command='jupyter nbextension enable vim_binding/vim_binding'
+
+.jupyter/custom/custom.js:
+	cp -f customfiles/custom.js $@
