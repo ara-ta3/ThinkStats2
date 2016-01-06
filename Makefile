@@ -27,4 +27,5 @@ __install-vim-plugin:
 	$(MAKE) __command command='jupyter nbextension enable vim_binding/vim_binding'
 
 .jupyter/custom/custom.js:
+	mkdir -p `dirname $@`
 	cp -f customfiles/custom.js $@
